@@ -1,0 +1,14 @@
+echo $SHELL
+cd /tmp
+mkdir missing
+man touch
+touch semester
+cat > semester << ‘EOF’
+#!/bin/sh
+curl --head --silent https://missing.csail.mit.edu
+EOF
+./semester
+ls
+sh semester 
+man chmod
+chmod +x semester
